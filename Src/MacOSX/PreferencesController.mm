@@ -32,6 +32,9 @@ static NSString * const StartHandlerParamNames[2] = {
 
 @implementation PreferencesController
 
+@synthesize panel;
+@synthesize dasherApp;
+
 - (id)defaultsValueForKey:(NSString *)aKey {
   return [[NSUserDefaultsController sharedUserDefaultsController] valueForKeyPath:[NSString stringWithFormat:@"values.%@", aKey]];
 }
