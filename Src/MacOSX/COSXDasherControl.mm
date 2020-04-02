@@ -205,10 +205,11 @@ bool COSXDasherControl::WriteUserDataFile(const std::string &filename, const std
 	std::string strFilename(StdStringFromNSString(userDir) + filename);
 	
 	NSLog(@"Write train file: %s", strFilename.c_str());
-	int flg=O_CREAT|O_WRONLY|S_IWUSR;
+	int flg=O_CREAT|O_WRONLY;
+	int mode=S_IRUSR|S_IWUSR;
 	if(append)
-		flg|=O_APPEND,S_IRUSR;
-	int fd=open(strFilename.c_str(),flg);
+		flg|=O_APPEND;
+	int fd=open(strFilename.c_str(),flg, mode);
 	write(fd,strNewText.c_str(),strNewText.length());
 	close(fd);
 	return true;
