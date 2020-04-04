@@ -49,7 +49,6 @@ public:
   NSDictionary *ParameterDictionary();
   
   void goddamn(unsigned long iTime, bool bForceRedraw);
-  virtual void WriteTrainFile(const std::string &filename, const std::string &strNewText);
 	virtual bool WriteUserDataFile(const std::string &filename, const std::string &strNewText, bool append);
   std::string GetAllContext();
   void ClearAllContext();
